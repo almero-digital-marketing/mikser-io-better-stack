@@ -1,0 +1,28 @@
+{
+  "name": "mikser-io-better-stack",
+  "version": "1.0.0",
+  "description": "Better Stack (uptime + log management) integration for mikser-io. Single plugin call wires both surfaces: pino log transport via @logtail/pino (logs ship to Better Stack's log ingestion) and a periodic heartbeat ping (so Better Stack Uptime knows the mikser process is alive). Uses the engine's addLogTransport substrate landed in mikser-io 9.x.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "commit": "node ../commit.mjs --only mikser-io-better-stack",
+    "publish:workspace": "node ../publish.mjs --only mikser-io-better-stack",
+    "update": "node ../update.mjs --only mikser-io-better-stack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/almero-digital-marketing/mikser-io-better-stack.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/almero-digital-marketing/mikser-io-better-stack/issues"
+  },
+  "homepage": "https://github.com/almero-digital-marketing/mikser-io-better-stack#readme",
+  "peerDependencies": {
+    "mikser-io": "^9.0.0"
+  },
+  "dependencies": {
+    "@logtail/pino": "^0.5.5"
+  }
+}
