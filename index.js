@@ -59,7 +59,7 @@ export function betterStack(options = {}) {
                 if (!sourceToken) {
                     // Nothing was configured at all — surface that so
                     // the operator notices.
-                    logger.info('better-stack: no tokens configured (sourceToken, heartbeatToken). Plugin is a no-op.')
+                    logger.info('Better Stack: no tokens configured (sourceToken, heartbeatToken). Plugin is a no-op.')
                 }
                 return
             }
@@ -72,13 +72,13 @@ export function betterStack(options = {}) {
                 try {
                     const res = await fetch(url, { method: 'HEAD' })
                     if (!res.ok) {
-                        logger.warn('better-stack heartbeat: %d %s', res.status, res.statusText)
+                        logger.warn('Better Stack heartbeat: %d %s', res.status, res.statusText)
                     }
                 } catch (err) {
                     // Network transient — log at warn and let the next
                     // tick try again. Better Stack's grace window
                     // tolerates short outages without an alert.
-                    logger.warn('better-stack heartbeat failed: %s', err.message)
+                    logger.warn('Better Stack heartbeat failed: %s', err.message)
                 }
             }
 
@@ -91,7 +91,7 @@ export function betterStack(options = {}) {
                 process.once(sig, () => clearInterval(timer))
             }
 
-            logger.info('better-stack heartbeat: every %dms', intervalMs)
+            logger.info('Better Stack heartbeat: every %dms', intervalMs)
         })
     }
 }
