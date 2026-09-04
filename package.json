@@ -24,5 +24,8 @@
   },
   "dependencies": {
     "@logtail/pino": "^0.5.5"
+  },
+  "devDependencies": {
+    "mikser-io": "^10.0.0"
   }
 }
