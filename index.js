@@ -93,5 +93,8 @@ export function betterStack(options = {}) {
 
             logger.info('Better Stack heartbeat: every %dms', intervalMs)
         })
+        // Names this package to the runtime's loaded-plugin record, so
+        // ping reports it as running rather than as undetectable.
+        return { module: import.meta.url }
     }
 }
